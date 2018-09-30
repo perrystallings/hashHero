@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HashHero Demo</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="player.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="js/papaparse.js"></script>
+		<script src="js/hero.js"></script>
+		<script src="js/StreamSaver.js"></script> <!-- load before streams polyfill to detect support -->
+		<script src="https://cdn.rawgit.com/creatorrr/web-streams-polyfill/master/dist/polyfill.min.js"></script>
+
+	</head>
+	<body>
+		<h1>Hash Hero Demo</h1>
+
+		<div class="grid-container">
+
+			<div class="grid-25">
+				<label>Delimiter: <input type="text" size="5" placeholder="auto" id="delimiter"> <a href="javascript:" id="insert-tab">tab</a></label>
+				<label>Encoding: <input type="text" id="encoding" placeholder="default" size="10"></label>
+				Line Endings:
+
+				<label style="display: inline;"><input type="radio" name="newline" id="newline-auto" checked>Auto</label>
+				<label style="display: inline;"><input type="radio" name="newline" id="newline-n">\n</label>
+				<label style="display: inline;"><input type="radio" name="newline" id="newline-r">\r</label>
+				<label style="display: inline;"><input type="radio" name="newline" id="newline-rn">\r\n</label>
+			</div>
+
+			<div class="grid-75 text-center">
+
+				<input type="file" id="files" multiple>
+
+				<br><br>
+
+				<button id="submit-parse">Hash</button>
+
+				<br><br>
+
+				<i>Hash Hero will save a new file to your download folder with all email strings converted to SHA-256 Hashes</i>
+			</div>
+
+		</div>
+	</body>
+</html>
